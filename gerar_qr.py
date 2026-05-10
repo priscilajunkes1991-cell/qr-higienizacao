@@ -1,9 +1,13 @@
 import qrcode
 
-url = "http://192.168.7.175:5000/equipamento/1"
+base_url = "https://qr-higienizacao.onrender.com/equipamento/"
 
-img = qrcode.make(url)
+for i in range(1, 6):
 
-img.save("equipamento1.png")
+    url = f"{base_url}{i}"
 
-print("QR Code criado com sucesso!")
+    img = qrcode.make(url)
+
+    img.save(f"equipamento_{i}.png")
+
+    print(f"QR Code {i} criado!")
